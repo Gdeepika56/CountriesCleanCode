@@ -1,10 +1,12 @@
-package com.example.countriesassessment.repository
+package com.example.countriesassessment.data
 
-import com.example.countriesassessment.model.CountriesItem
-import com.example.countriesassessment.remote.ApiService
+import com.example.countriesassessment.domain.model.CountriesItem
+import com.example.countriesassessment.domain.repository.CountryRepository
+import com.example.countriesassessment.data.remote.ApiService
 import javax.inject.Inject
 
-class CountryRepositoryImpl @Inject constructor(private val apiService: ApiService): CountryRepository {
+class CountryRepositoryImpl @Inject constructor(private val apiService: ApiService):
+    CountryRepository {
 
     override suspend fun getCountries(): Result<List<CountriesItem>> {
         return try{

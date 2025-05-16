@@ -1,4 +1,4 @@
-package com.example.countriesassessment.model
+package com.example.countriesassessment.domain.model
 
 data class Language(
     val code: String,

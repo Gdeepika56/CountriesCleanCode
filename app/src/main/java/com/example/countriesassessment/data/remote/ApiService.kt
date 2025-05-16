@@ -1,6 +1,6 @@
-package com.example.countriesassessment.remote
+package com.example.countriesassessment.data.remote
 
-import com.example.countriesassessment.model.CountriesItem
+import com.example.countriesassessment.domain.model.CountriesItem
 import retrofit2.Response
 import retrofit2.http.GET
 

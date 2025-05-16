@@ -1,4 +1,4 @@
-package com.example.countriesassessment.remote
+package com.example.countriesassessment.presentation.state
 
 sealed class ApiState <out T>{
     object Loading: ApiState<Nothing>()

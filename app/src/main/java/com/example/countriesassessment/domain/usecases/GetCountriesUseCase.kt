@@ -1,7 +1,7 @@
-package com.example.countriesassessment.usecases
+package com.example.countriesassessment.domain.usecases
 
-import com.example.countriesassessment.model.CountriesItem
-import com.example.countriesassessment.repository.CountryRepository
+import com.example.countriesassessment.domain.model.CountriesItem
+import com.example.countriesassessment.domain.repository.CountryRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

@@ -1,8 +1,8 @@
 package com.example.countriesassessment.di
 
-import com.example.countriesassessment.remote.ApiService
-import com.example.countriesassessment.repository.CountryRepository
-import com.example.countriesassessment.repository.CountryRepositoryImpl
+import com.example.countriesassessment.data.remote.ApiService
+import com.example.countriesassessment.domain.repository.CountryRepository
+import com.example.countriesassessment.data.CountryRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +12,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-import kotlin.math.log
 
 
 @Module

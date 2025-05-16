@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.countriesassessment.presentation.viewmodel.CountriesViewModel
-import com.example.countriesassessment.remote.ApiState
+import com.example.countriesassessment.presentation.state.ApiState
 
 @Composable
 fun CountriesScreen(viewModel: CountriesViewModel= hiltViewModel()) {

@@ -1,11 +1,10 @@
 package com.example.countriesassessment.presentation.viewmodel
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.countriesassessment.model.CountriesItem
-import com.example.countriesassessment.remote.ApiState
-import com.example.countriesassessment.usecases.GetCountriesUseCase
+import com.example.countriesassessment.domain.model.CountriesItem
+import com.example.countriesassessment.presentation.state.ApiState
+import com.example.countriesassessment.domain.usecases.GetCountriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
