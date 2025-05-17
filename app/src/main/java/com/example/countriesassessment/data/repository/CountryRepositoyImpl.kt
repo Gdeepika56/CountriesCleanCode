@@ -1,20 +1,20 @@
-package com.example.countriesassessment.data
+package com.example.countriesassessment.data.repository
 
-import com.example.countriesassessment.domain.model.CountriesItem
-import com.example.countriesassessment.domain.repository.CountryRepository
 import com.example.countriesassessment.data.remote.ApiService
+import com.example.countriesassessment.domain.data.CountryDomain
+import com.example.countriesassessment.data.mapper.toDomain
 import javax.inject.Inject
 
 class CountryRepositoryImpl @Inject constructor(private val apiService: ApiService):
     CountryRepository {
 
-    override suspend fun getCountries(): Result<List<CountriesItem>> {
+    override suspend fun getCountries(): Result<List<CountryDomain>> {
         return try{
             val response = apiService.getCountries()
            if(response.isSuccessful){
                val body =response.body()
                if(body != null){
-                   Result.success(body)
+                   Result.success(body.map { it.toDomain() })
                }else{
                    Result.failure(Exception("Response body is null"))
                }

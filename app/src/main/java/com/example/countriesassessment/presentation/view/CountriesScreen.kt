@@ -15,6 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.countriesassessment.domain.data.CountryDomain
 import com.example.countriesassessment.presentation.viewmodel.CountriesViewModel
 import com.example.countriesassessment.presentation.state.ApiState
 
@@ -35,7 +36,7 @@ fun CountriesScreen(viewModel: CountriesViewModel= hiltViewModel()) {
         is ApiState.Success->{
             val response = countriesState.data
             LazyColumn {
-                items (response){ country->
+                items (response){ country : CountryDomain->
                     Card (modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp)){
                         Column (modifier = Modifier.fillMaxSize().padding(8.dp)){
                             Row (modifier = Modifier.fillMaxSize()){

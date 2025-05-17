@@ -1,8 +1,9 @@
 package com.example.countriesassessment.di
 
+import com.example.countriesassessment.commons.Constants.BASE_URL
 import com.example.countriesassessment.data.remote.ApiService
-import com.example.countriesassessment.domain.repository.CountryRepository
-import com.example.countriesassessment.data.CountryRepositoryImpl
+import com.example.countriesassessment.data.repository.CountryRepository
+import com.example.countriesassessment.data.repository.CountryRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +29,7 @@ object AppModule {
         val okHttpClient= OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
 
         return Retrofit.Builder().apply {
-            baseUrl("https://gist.githubusercontent.com/")
+            baseUrl(BASE_URL)
             addConverterFactory(GsonConverterFactory.create())
             client(okHttpClient)
 

@@ -2,7 +2,7 @@ package com.example.countriesassessment.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.countriesassessment.domain.model.CountriesItem
+import com.example.countriesassessment.domain.data.CountryDomain
 import com.example.countriesassessment.presentation.state.ApiState
 import com.example.countriesassessment.domain.usecases.GetCountriesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,8 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CountriesViewModel @Inject constructor(private val getCountriesUseCase: GetCountriesUseCase): ViewModel() {
 
-    private  val _state = MutableStateFlow<ApiState<List<CountriesItem>>>(ApiState.Loading)
-    val state : StateFlow<ApiState<List<CountriesItem>>> = _state
+    private  val _state = MutableStateFlow<ApiState<List<CountryDomain>>>(ApiState.Loading)
+    val state : StateFlow<ApiState<List<CountryDomain>>> = _state
 
     fun fetchCountries(){
         viewModelScope.launch (Dispatchers.IO){
